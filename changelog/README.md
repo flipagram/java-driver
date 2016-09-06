@@ -1,5 +1,11 @@
 ## Changelog
 
+
+### 3.1.1 (in progress)
+
+- [bug] BuiltStatement not able to print its query string if it contains mapped UDTs.
+
+
 ### 3.1.0
 
 - [new feature] JAVA-1153: Add PER PARTITION LIMIT to Select QueryBuilder.
