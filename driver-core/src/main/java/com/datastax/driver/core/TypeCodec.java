@@ -506,6 +506,8 @@ public abstract class TypeCodec<T> {
      * Implementing this method is not strictly mandatory: internally, the driver only uses it to
      * parse the INITCOND when building the metadata of an aggregate function (and in most cases it
      * will use a built-in codec, unless the INITCOND has a custom type).
+     * If you choose not to implement this method, you should not throw an exception but
+     * instead return a constant string (for example "XxxCodec.parse not implemented").
      *
      * @param value The CQL string to parse, may be {@code null} or empty.
      * @return An instance of T; may be {@code null} on a {@code null input}.
@@ -533,8 +535,8 @@ public abstract class TypeCodec<T> {
      * {@link TupleValue}, and the internal representation of a {@code ROWS} response),
      * which may appear in driver logs.</li>
      * </ol>
-     * If choose not to implement this method, you can return a constant string (for example
-     * "XxxCodec.format not implemented").
+     * If you choose not to implement this method, you should not throw an exception but
+     * instead return a constant string (for example "XxxCodec.format not implemented").
      *
      * @param value An instance of T; may be {@code null}.
      * @return CQL string
